@@ -648,6 +648,7 @@ if global.gameStarted &amp;&amp; global.debugOverlay &gt; 0 {
     debugText += string_concat("Y: ", playerY, newLine);
     debugText += string_concat("Room: " + room_get_name(room), " (", room, ")", newLine);
     debugText += string_concat("FPS: ", fps, ", Real FPS: ", fps_real, newLine);
+    debugText += string_concat("Instance count: ", instance_count, newLine);
     
     debugText += newLine;
     if global.debugOverlay == 1 {

@@ -289,6 +289,7 @@
       </scripts>
       <script>scripts\ternary.gml</script>
       <script>scripts\print.gml</script>
+      <script>scripts\print_list.gml</script>
       <script>scripts\string_concat.gml</script>
       <script>scripts\color_multiply.gml</script>
     </scripts>

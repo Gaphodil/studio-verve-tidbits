@@ -47,3 +47,10 @@ This adds the debug keys of F7/F8 as a means of incrementing or decrementing the
 Changes:
 
 - Objects - World - `objWorld`
+
+### Other small changes
+
+- Add `instance_count` to debug overlay
+    - Objects - World - `objWorld`
+- Add `print_list` for debug output
+    - Scripts - Utility - `print_list`

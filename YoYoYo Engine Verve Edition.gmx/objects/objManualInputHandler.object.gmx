@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-// check all KEYs from input_define
+            <string>// check all KEYs from input_define
 var len = array_height_2d(global.controls);
 var i = 0;
 repeat (len) {

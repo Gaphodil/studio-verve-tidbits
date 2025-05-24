@@ -14,7 +14,8 @@ window_set_caption(global.roomCaptionDef);
 
 global.persistentSaveData = ds_map_create();
 global.saveData = ds_map_create();
-global.musicMap = ds_map_create();
+if (!variable_global_exists("musicMap"))
+    global.musicMap = ds_map_create();
 
 global.savenum = 1;
 global.grav = 1;

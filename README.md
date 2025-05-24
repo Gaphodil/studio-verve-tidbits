@@ -54,3 +54,6 @@ Changes:
     - Objects - World - `objWorld`
 - Add `print_list` for debug output
     - Scripts - Utility - `print_list`
+- Remove some memory leaks on F2
+    - Scripts - World - `initialize_globals`
+    - Scripts - World - `restart_game`

@@ -43,8 +43,10 @@ global.menuSelectPrev[0] = 0;   //Keeps track of the previously selected option 
 global.menuSelectPrev[1] = 0;   //Keeps track of the previously selected option when navigating away from the options menu
 
 //Get the default window size
-global.windowWidth = surface_get_width(application_surface);
-global.windowHeight = surface_get_height(application_surface);
+global.defaultWindowWidth = surface_get_width(application_surface);
+global.defaultWindowHeight = surface_get_height(application_surface);
+global.windowWidth = global.defaultWindowWidth;
+global.windowHeight = global.defaultWindowHeight;
 
 //Keeps track of previous window position/size when display_reset is used for setting vsync
 global.windowXPrev = 0;

@@ -27,16 +27,16 @@
             <kind>1</kind>
             <string>// check all KEYs from input_define
 var len = array_height_2d(global.controls);
-var i = 0;
+var i = len-1;
 repeat (len) {
     // ignore management enum
     if (i == KEY.NUMBER) {}
     else {
-        reg[? i] = raw_input_check(i);
-        pressed[? i] = raw_input_check_pressed(i);
-        released[? i] = raw_input_check_released(i);
+        state[i, 0] = raw_input_check(i);
+        state[i, 1] = raw_input_check_pressed(i);
+        state[i, 2] = raw_input_check_released(i);
     }
-    i++;
+    i--;
 }
 
 </string>

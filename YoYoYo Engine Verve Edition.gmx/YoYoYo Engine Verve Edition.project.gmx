@@ -213,6 +213,7 @@
       <script>scripts\options_list.gml</script>
       <script>scripts\opt_template.gml</script>
       <script>scripts\opt_music.gml</script>
+      <script>scripts\opt_musicvolume.gml</script>
       <script>scripts\opt_volume.gml</script>
       <script>scripts\opt_fullscreen.gml</script>
       <script>scripts\opt_windowscale.gml</script>
@@ -228,6 +229,7 @@
       <script>scripts\music_play.gml</script>
       <script>scripts\music_stop.gml</script>
       <script>scripts\music_toggle.gml</script>
+      <script>scripts\music_gain.gml</script>
       <script>scripts\music_load.gml</script>
     </scripts>
     <scripts name="Player">

@@ -2,6 +2,7 @@
 
 ds_list_add(global.options, opt_music);
 ds_list_add(global.options, opt_volume);
+ds_list_add(global.options, opt_musicvolume);
 ds_list_add(global.options, opt_fullscreen);
 ds_list_add(global.options, opt_windowscale);
 ds_list_add(global.options, opt_smoothing);

@@ -5,13 +5,15 @@
 ini_open("config.ini");
              
 global.muteMusic = ini_read_real("Settings", "Mute_music", false);
-global.volumeLevel = clamp(floor(ini_read_real("Settings", "Volume_level", 100)), 0, 100);
+global.volumeLevel = clamp(floor(ini_read_real("Settings", "Volume_level", 50)), 0, 100);
+global.musVolumeLevel = clamp(floor(ini_read_real("Settings", "Music_level", 50)), 0, 100);
 global.fullscreenMode = ini_read_real("Settings", "Fullscreen_mode", false);
 global.smoothingMode = ini_read_real("Settings", "Smoothing_mode", false);
 global.vsyncMode = ini_read_real("Settings", "Vsync_mode", false);
 global.windowScale = clamp(floor(ini_read_real("Settings", "Window_scale", 2)), 1, 8) / 2;
 
 audio_master_gain(global.volumeLevel/100);
+music_gain(global.musVolumeLevel/100);
 window_set_fullscreen(global.fullscreenMode);
 global.windowWidth  = global.defaultWindowWidth * global.windowScale;
 global.windowHeight = global.defaultWindowHeight * global.windowScale;

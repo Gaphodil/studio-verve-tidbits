@@ -18,3 +18,24 @@ This provides an in-game option for adjusting the scale of the window, by increm
         - Save/Load - `config_load`
         - Options - `options_list`
 </details>
+
+### Music Volume
+
+This adds an option for adjusting music volume separately from overall volume. This also adjusts the default volume on both settings to 50%. This does not allow for adjusting only the volume of sounds as a whole.
+
+<details>
+<summary>Changes</summary>
+
+- Scripts:
+    - New:
+        - Options - `opt_musicvolume`
+        - Music - `music_gain`
+    - Edited:
+        - Save/Load - `config_save`
+        - Save/Load - `config_load`
+        - Options - `options_list`
+        - Music - `music_play`
+- Objects:
+    - Edited:
+        - World - `objWorld`
+</details>

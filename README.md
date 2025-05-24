@@ -39,3 +39,11 @@ This adds an option for adjusting music volume separately from overall volume. T
     - Edited:
         - World - `objWorld`
 </details>
+
+### Debug: Shift `room_speed`
+
+This adds the debug keys of F7/F8 as a means of incrementing or decrementing the target speed of the game, clamped between 1 and the default (moved to a `gameSpeed` attribute). The value is adjusted by 5, or 1 if Alt is held.
+
+Changes:
+
+- Objects - World - `objWorld`

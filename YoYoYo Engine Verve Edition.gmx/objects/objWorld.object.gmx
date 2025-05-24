@@ -310,6 +310,17 @@ if (global.debugMode &amp;&amp; global.gameStarted &amp;&amp; !global.gamePaused
                 visible = true;
             }
         }
+
+        // Change speed of game
+        if keyboard_check_pressed(vk_f7)
+            or keyboard_check_pressed(vk_f8)
+        {
+            var diff = 5;
+            if (keyboard_check_pressed(vk_f7)) diff *= -1;
+            if (keyboard_check(vk_alt)) diff /= 5;
+            roomSpeed = clamp(roomSpeed + diff, 1, gameSpeed);
+            room_speed = roomSpeed;
+        }
     }
 }
 
@@ -470,7 +481,7 @@ if (!instance_exists(objPlayMusic))
     music_play_room_bgm();
 }
 
-room_speed = 50;
+room_speed = roomSpeed;
 set_room_caption();
 </string>
           </argument>
@@ -509,6 +520,9 @@ volumeTimer = 0;
 volumeDelay = 10;
 musVolumeTimer = 0;
 musVolumeDelay = 10;
+
+gameSpeed = 50;
+roomSpeed = gameSpeed;
 
 room_goto_next();
 </string>
@@ -650,6 +664,7 @@ if global.gameStarted &amp;&amp; global.debugOverlay &gt; 0 {
         debugText += "[W] - Warp to room by name" + newLine;
         debugText += "[G] - Flip gravity" + newLine;
         debugText += "[I] - Show invisible objects" + newLine;
+        debugText += "[F7/F8] - Change room speed (Alt = fine)" + newLine;
     }
     
     draw_text_outline(16, 16, debugText, c_white, c_black);

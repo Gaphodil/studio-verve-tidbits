@@ -17,6 +17,9 @@ This provides an in-game option for adjusting the scale of the window, by increm
         - Save/Load - `config_save`
         - Save/Load - `config_load`
         - Options - `options_list`
+- Objects:
+    - Edited:
+        - World - `objWorld`
 </details>
 
 ### Music Volume

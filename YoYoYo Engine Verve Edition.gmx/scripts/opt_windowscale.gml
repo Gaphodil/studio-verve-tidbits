@@ -24,6 +24,7 @@ switch(argument0)
             global.windowWidth  = global.defaultWindowWidth * global.windowScale;
             global.windowHeight = global.defaultWindowHeight * global.windowScale;
             update_window_size();
+            audio_play_sound(global.menuSound, 0, false);
         }
         break;
         

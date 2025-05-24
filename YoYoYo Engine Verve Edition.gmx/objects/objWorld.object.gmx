@@ -525,6 +525,8 @@ musVolumeDelay = 10;
 gameSpeed = 50;
 roomSpeed = gameSpeed;
 
+manualInput = instance_create(0, 0, objManualInputHandler);
+
 room_goto_next();
 </string>
           </argument>

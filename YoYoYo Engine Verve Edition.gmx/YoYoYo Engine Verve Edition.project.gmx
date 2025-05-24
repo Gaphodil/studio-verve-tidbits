@@ -232,6 +232,11 @@
       <script>scripts\music_gain.gml</script>
       <script>scripts\music_load.gml</script>
     </scripts>
+    <scripts name="Input">
+      <script>scripts\input_check.gml</script>
+      <script>scripts\input_check_pressed.gml</script>
+      <script>scripts\input_check_released.gml</script>
+    </scripts>
     <scripts name="Player">
       <script>scripts\player_try_jump.gml</script>
       <script>scripts\player_ground_jump.gml</script>
@@ -262,9 +267,9 @@
     <scripts name="Controls">
       <script>scripts\input_define.gml</script>
       <script>scripts\input_any_controller_button.gml</script>
-      <script>scripts\input_check.gml</script>
-      <script>scripts\input_check_pressed.gml</script>
-      <script>scripts\input_check_released.gml</script>
+      <script>scripts\raw_input_check.gml</script>
+      <script>scripts\raw_input_check_pressed.gml</script>
+      <script>scripts\raw_input_check_released.gml</script>
       <script>scripts\input_get_key_name.gml</script>
       <script>scripts\input_get_button_name.gml</script>
       <script>scripts\input_check_and_switch_controller.gml</script>
@@ -311,9 +316,14 @@
       <object>objects\objKeyboardControlsMenu</object>
       <object>objects\objControllerMenu</object>
     </objects>
+    <objects name="Input">
+      <object>objects\objInputHandlerTemplate</object>
+      <object>objects\objManualInputHandler</object>
+    </objects>
     <objects name="Player">
       <object>objects\objPlayerStart</object>
       <object>objects\objPlayer</object>
+      <object>objects\objRawPlayer</object>
       <object>objects\objBow</object>
       <object>objects\objBullet</object>
       <object>objects\objBloodEmitter</object>
@@ -426,6 +436,7 @@
       <room>rooms\rMiku</room>
       <room>rooms\rEnd</room>
       <room>rooms\rTest</room>
+      <room>rooms\rInputTest</room>
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>

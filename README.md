@@ -51,6 +51,43 @@ Changes:
 
 - Objects - World - `objWorld`
 
+### Experiment: Input Handling Module
+
+This seperates out all input handling into a single persistent object, which checks all keys exactly once at Begin Step and caches the result.
+
+<details>
+<summary>Changes</summary>
+
+- Scripts:
+    - New:
+        - Input - `input_check`
+        - Input - `input_check_pressed`
+        - Input - `input_check_released`
+    - Renamed:
+        - Controls - `input_check` -> `raw_input_check`
+        - Controls - `input_check_pressed` -> `raw_input_check_pressed`
+        - Controls - `input_check_released` -> `raw_input_check_released`
+    - Edited:
+        - World - `check_and_pause`
+- Objects:
+    - New:
+        - Input - `objInputHandlerTemplate`
+        - Input - `objManualInputHandler`
+        - Player - `objRawPlayer`
+    - Edited:
+        - World - `objWorld`
+        - Player - `objPlayerStart`
+- For testing purposes:
+    - Objects:
+        - New:
+            - Player - `objRawPlayer`
+        - Edited:
+            - Player - `objPlayerStart`
+    - Rooms:
+        - New:
+            - Sample - `rInputTest`
+</details>
+
 ### Other small changes
 
 - Add `instance_count` to debug overlay

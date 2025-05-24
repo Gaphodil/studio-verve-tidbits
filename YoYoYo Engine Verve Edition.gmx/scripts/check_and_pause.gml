@@ -23,6 +23,7 @@ if (global.pauseDelay <= 0)    //Check if pause delay is active
                 
                 instance_deactivate_all(true);
                 instance_activate_object(objPlayMusic); //If objPlayMusic sets the current music, we need to find it if we turn on music in the pause options.
+                instance_activate_object(objWorld.manualInput); // The handler for menus must be active to allow unpausing.
                 
                 global.pauseSurf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
                 surface_copy(global.pauseSurf, 0, 0, application_surface);

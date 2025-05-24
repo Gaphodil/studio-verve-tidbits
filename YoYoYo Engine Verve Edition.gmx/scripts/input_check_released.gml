@@ -1,14 +1,8 @@
-///input_check_released(button)
+///input_check_released(button, [handler])
 
 // Checks whether a button is being released this frame.
 
-var button = argument0;
+var button = argument[0];
+var handler; if (argument_count > 1) handler = argument[1]; else handler = objWorld.manualInput;
 
-if (!global.controllerMode)
-{
-    return (keyboard_check_released(global.controls[button, 0]));
-}
-else
-{
-    return (gamepad_button_check_released(global.controllerIndex, global.controls[button, 1]));
-}
+return handler.released[? button]

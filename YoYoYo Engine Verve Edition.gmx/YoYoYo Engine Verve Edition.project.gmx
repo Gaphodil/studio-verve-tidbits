@@ -233,9 +233,14 @@
       <script>scripts\music_load.gml</script>
     </scripts>
     <scripts name="Input">
+      <script>scripts\input_check_base.gml</script>
       <script>scripts\input_check.gml</script>
       <script>scripts\input_check_pressed.gml</script>
       <script>scripts\input_check_released.gml</script>
+      <script>scripts\record_for.gml</script>
+      <script>scripts\create_ghost.gml</script>
+      <script>scripts\input_recording_save.gml</script>
+      <script>scripts\input_recording_load.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\player_try_jump.gml</script>
@@ -319,11 +324,16 @@
     <objects name="Input">
       <object>objects\objInputHandlerTemplate</object>
       <object>objects\objManualInputHandler</object>
+      <object>objects\objInputRecorder</object>
+      <object>objects\objInputRecorderJob</object>
+      <object>objects\objPlaybackInputHandler</object>
+      <object>objects\objPlaybackTestObject</object>
     </objects>
     <objects name="Player">
       <object>objects\objPlayerStart</object>
       <object>objects\objPlayer</object>
       <object>objects\objRawPlayer</object>
+      <object>objects\objGhostPlayer</object>
       <object>objects\objBow</object>
       <object>objects\objBullet</object>
       <object>objects\objBloodEmitter</object>
@@ -437,6 +447,7 @@
       <room>rooms\rEnd</room>
       <room>rooms\rTest</room>
       <room>rooms\rInputTest</room>
+      <room>rooms\rPlaybackTest</room>
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>

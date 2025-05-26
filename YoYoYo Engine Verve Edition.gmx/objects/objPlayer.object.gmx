@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>frozen = false; //Sets if the player can move or not
 
+inputHandler = objWorld.manualInput;
+
 jumpSpeed = 8.5 * global.grav; //Set how fast the player jumps
 djumpSpeed = 7 * global.grav; //Sets how fast the player double jumps
 gravity = 0.4 * global.grav; //Player gravity
@@ -198,8 +200,8 @@ if (!onVineR &amp;&amp; !onVineL)   //Not touching any vines
     if (onPlatform || !notOnBlock)  //Standing on something
     {
         //Check if moving left/right
-        var L = (input_check(KEY.LEFT) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.LEFT)));
-        var R = (input_check(KEY.RIGHT) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.RIGHT)));
+        var L = (input_check(KEY.LEFT, inputHandler) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.LEFT, inputHandler)));
+        var R = (input_check(KEY.RIGHT, inputHandler) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.RIGHT, inputHandler)));
         
         if ((L || R) &amp;&amp; !frozen)
         {
@@ -256,8 +258,8 @@ else    //Touching a vine
             <string>///Player actions and movement
 
 //Left-right input
-var L = (input_check(KEY.LEFT) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.LEFT)));
-var R = (input_check(KEY.RIGHT) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.RIGHT)));
+var L = (input_check(KEY.LEFT, inputHandler) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.LEFT, inputHandler)));
+var R = (input_check(KEY.RIGHT, inputHandler) || (global.directionalTapFix &amp;&amp; input_check_pressed(KEY.RIGHT, inputHandler)));
 var h = 0;
 if (!frozen)
     { h = -(L || R) + (2 * R); }
@@ -322,20 +324,20 @@ if (global.grav * vspeed &gt; maxVspeed)
 
 if (!frozen)
 {
-    if (input_check_pressed(KEY.SHOOT))
+    if (input_check_pressed(KEY.SHOOT, inputHandler))
         player_shoot();
-    if (input_check_pressed(KEY.JUMP))
+    if (input_check_pressed(KEY.JUMP, inputHandler))
         player_try_jump();
-    if (input_check_released(KEY.JUMP))
+    if (input_check_released(KEY.JUMP, inputHandler))
         player_release_jump();
-    if (input_check_pressed(KEY.SUICIDE))
+    if (input_check_pressed(KEY.SUICIDE, inputHandler))
         player_kill();
 }
 
 if (global.adAlign &amp;&amp; !place_free(x, y + (global.grav)) &amp;&amp; !frozen)
 {
-    if (input_check_pressed(KEY.ALIGN_LEFT)) {hspeed -= 1;}
-    if (input_check_pressed(KEY.ALIGN_RIGHT)) {hspeed += 1;}
+    if (input_check_pressed(KEY.ALIGN_LEFT, inputHandler)) {hspeed -= 1;}
+    if (input_check_pressed(KEY.ALIGN_RIGHT, inputHandler)) {hspeed += 1;}
 }
 
 deathSoundCooldown -= 1;
@@ -371,9 +373,9 @@ if (onVineL || onVineR)
     vspeed = 2 * global.grav;
     
     //Try to leave vine
-    if (onVineL &amp;&amp; input_check_pressed(KEY.RIGHT)) || (onVineR &amp;&amp; input_check_pressed(KEY.LEFT))
+    if (onVineL &amp;&amp; input_check_pressed(KEY.RIGHT, inputHandler)) || (onVineR &amp;&amp; input_check_pressed(KEY.LEFT))
     {
-        if (input_check(KEY.JUMP))    //Jumping off
+        if (input_check(KEY.JUMP, inputHandler))    //Jumping off
         {
             if (onVineR)
                 { hspeed = -15; }

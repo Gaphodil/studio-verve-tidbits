@@ -25,16 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// check all KEYs from input_define
+            <string>ds_map_clear(state);
+// check all KEYs from input_define
 var len = array_height_2d(global.controls);
 var i = len-1;
 repeat (len) {
     // ignore management enum
     if (i == KEY.NUMBER) {}
     else {
-        state[i, 0] = raw_input_check(i);
-        state[i, 1] = raw_input_check_pressed(i);
-        state[i, 2] = raw_input_check_released(i);
+        // assume fewer than 100 internal keys
+        if (raw_input_check(i))
+            state[? i] = ""; // smallest datatype?
+        if (raw_input_check_pressed(i))
+            state[? i * 100] = "";
+        if (raw_input_check_released(i))
+        state[? i * 10000] = "";
     }
     i--;
 }

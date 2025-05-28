@@ -1,6 +1,6 @@
 ///print_list(str, ...)
 
-// Like print, but comma-seperated.
+// Like print, but comma-separated.
 
 var out = "";
 

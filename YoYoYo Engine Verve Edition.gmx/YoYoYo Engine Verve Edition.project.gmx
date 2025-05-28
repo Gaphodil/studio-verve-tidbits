@@ -251,6 +251,21 @@
       <script>scripts\player_set_mask.gml</script>
       <script>scripts\player_kill.gml</script>
       <script>scripts\player_flip.gml</script>
+      <scripts name="Step">
+        <script>scripts\player_handle_move.gml</script>
+        <script>scripts\player_handle_actions.gml</script>
+        <script>scripts\player_handle_change_aligns.gml</script>
+        <script>scripts\player_handle_death_sfx.gml</script>
+        <script>scripts\player_handle_vines.gml</script>
+        <script>scripts\player_handle_slopes.gml</script>
+        <script>scripts\player_handle_blocks.gml</script>
+      </scripts>
+      <scripts name="End Step">
+        <script>scripts\player_resolve_collisions.gml</script>
+        <script>scripts\player_resolve_killers.gml</script>
+        <script>scripts\player_resolve_screen_border.gml</script>
+        <script>scripts\player_resolve_animations.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Trigger">
       <script>scripts\make_trigger.gml</script>

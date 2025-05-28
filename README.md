@@ -53,7 +53,7 @@ Changes:
 
 ### Experiment: Input Handling Module
 
-This seperates out all input handling into a single persistent object, which checks all keys exactly once at Begin Step and caches the result.
+This separates out all input handling into a single persistent object, which checks all keys exactly once at Begin Step and caches the result.
 
 <details>
 <summary>Changes</summary>
@@ -117,6 +117,31 @@ Built from the input handling module. This adds a method of recording inputs, to
     - Rooms:
         - New:
             - Sample - `rPlaybackTest`
+</details>
+
+### Experiment: Separate Player Event Code to Scripts
+
+This moves Step and End Step code from `objPlayer` into separate scripts, which are dynamically called from arrays.
+
+<details>
+<summary>Changes</summary>
+
+- Scripts:
+    - New:
+        - Player - Step - `player_handle_move`
+        - Player - Step - `player_handle_actions`
+        - Player - Step - `player_handle_change_aligns`
+        - Player - Step - `player_handle_death_sfx`
+        - Player - Step - `player_handle_vines`
+        - Player - Step - `player_handle_slopes`
+        - Player - Step - `player_handle_blocks`
+        - Player - End Step - `player_resolve_collisions`
+        - Player - End Step - `player_resolve_killers`
+        - Player - End Step - `player_resolve_screen_border`
+        - Player - End Step - `player_resolve_animations`
+- Objects:
+    - Edited:
+        - Player - `objPlayer`
 </details>
 
 ### Other small changes

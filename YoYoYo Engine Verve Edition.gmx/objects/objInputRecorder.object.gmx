@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>only_rebinds = false;
-handler = undefined;
+            <string>handler = undefined;
 
 saved_states = ds_map_create();
 active = false;

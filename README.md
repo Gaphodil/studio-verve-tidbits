@@ -88,7 +88,7 @@ This separates out all input handling into a single persistent object, which che
 
 ### Experiment: Input Recording and Playback Module
 
-Built from the input handling module. This adds a method of recording inputs, to be stored and played back with a custom input handler, as well as a child class of `objPlayer` that makes use of it. Note that the present implementation does not account for multiple player objects and may act upon all of them, with a notable example being `player_kill`.
+Built from the input handling module. This adds a method of recording inputs, to be stored and played back with a custom input handler, as well as a child class of `objPlayer` that makes use of it. Note that the present implementation does not account for multiple player objects and may act upon all of them, with some notable examples being `player_kill` and `objBullet`.
 
 <details>
 <summary>Changes</summary>

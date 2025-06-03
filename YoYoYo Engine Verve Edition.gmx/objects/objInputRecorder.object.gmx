@@ -82,12 +82,15 @@ if (is_undefined(handler))
 
 var copy_to = ds_map_create();
 var to_copy = handler.state;
-var key = ds_map_find_first(to_copy);
-repeat (ds_map_size(to_copy)) {
-    copy_to[? key] = to_copy[? key];
-    key = ds_map_find_next(to_copy, key);
+var sz = ds_map_size(to_copy);
+if (sz &gt; 0) {
+    var key = ds_map_find_first(to_copy);
+    repeat (ds_map_size(to_copy)) {
+        copy_to[? key] = to_copy[? key];
+        key = ds_map_find_next(to_copy, key);
+    }
+    ds_map_add_map(saved_states, t, copy_to);
 }
-ds_map_add_map(saved_states, t, copy_to);
 
 t++;
 

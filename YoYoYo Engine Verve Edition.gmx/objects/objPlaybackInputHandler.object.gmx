@@ -33,6 +33,8 @@ active = false;
 init = false;
 fin = false;
 t = 0;
+sz = -1;
+blanks = 0;
 </string>
           </argument>
         </arguments>
@@ -78,29 +80,34 @@ t = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (is_undefined(saved_states)) {
+            <string>if (not active) exit;
+if (is_undefined(saved_states)) {
     print("no saved states in input playback");
     instance_destroy();
     exit;
 }
 if (not init) {
     ds_map_clear(state);
+    sz = ds_map_size(saved_states);
     init = true;
 }
-if (not fin) {
-    if (t &gt;= ds_map_size(saved_states)) {
-        ds_map_clear(state);
-        fin = true;
-        exit;
-    }
+
+if (fin) exit;
+if (t &gt;= (sz + blanks)) {
+    ds_map_clear(state);
+    fin = true;
+    print("end playback");
+    exit;
 }
-else exit;
-if (not active) exit;
 
 if (ds_map_exists(saved_states, t))
     ds_map_copy(state, saved_states[? t]);
-else
+else if (ds_map_exists(saved_states, string(t)))
     ds_map_copy(state, saved_states[? string(t)]);
+else {
+    blanks++;
+    ds_map_clear(state);
+}
 t++;
 
 </string>

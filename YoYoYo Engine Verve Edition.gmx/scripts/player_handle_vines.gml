@@ -10,7 +10,7 @@ if (onVineL || onVineR)
     vspeed = 2 * global.grav;
     
     //Try to leave vine
-    if (onVineL && input_check_pressed(KEY.RIGHT, inputHandler)) || (onVineR && input_check_pressed(KEY.LEFT))
+    if (onVineL && input_check_pressed(KEY.RIGHT, inputHandler)) || (onVineR && input_check_pressed(KEY.LEFT, inputHandler))
     {
         if (input_check(KEY.JUMP, inputHandler))    //Jumping off
         {
